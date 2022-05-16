@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(248, 243, 231);
+    color: rgb(211, 125, 165);
+    min-height: 100vh;
+}
+header {
+    font-size: 1.5rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+header,
+form {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input {
+    border: 1px solid rgb(218, 216, 216);
+    border-radius: 5px;
+    margin-right: 5px;
+}
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background: white;
+    outline: none;
+}
+form button {
+    color: rgb(211, 125, 165);
+    cursor: pointer;
+    border: 1px solid rgb(218, 216, 216);
+    border-radius: 5px;
+}
+form button:hover {
+    background: rgb(211, 125, 165);
+    color: white;
+}
+form input:hover {
+    border: 1px solid rgb(182, 179, 179);
+}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list {
+    list-style: none;
+    min-width: 30%;
+}
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    color: rgb(131, 128, 128);
+    font-size: 1.3rem;
+
+    transition: all 0.5s ease;
+}
+.todo li {
+    flex: 1 1 0;     /* or flex:1 considered as flex-grow */
+}
+.done-button,
+.delete-button {
+    background: transparent;
+    color: rgb(211, 125, 165);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.bi-trash,
+.bi-check-lg {
+    pointer-events: none;   /* can't click on i but can click on whole button */
+}
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select {
+    color: rgb(131, 128, 128);
+    width: 9rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid rgb(218, 216, 216);
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+select:hover {
+    border: 1px solid rgb(182, 179, 179);
+}
+.select::after {
+    content: '\25BC';        /* down arrow */
+    position: absolute;
+    pointer-events: none;    /* arrow not clickable but can click on select*/
+    top: 0;
+    right: 0;
+    padding: 0.7rem;
+    color: rgb(211, 125, 165);
+    border-radius: 5px;
+}
+.select:hover::after {
+    background: rgb(211, 125, 165);
+    color: white;
+}
